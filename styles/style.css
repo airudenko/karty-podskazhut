@@ -1,0 +1,228 @@
+.page {
+  min-inline-size: 360px;
+  margin: 0;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+}
+
+.header {
+  padding-block-start: 10%;
+}
+
+.heading {
+  font-family: var(--accent-font);
+  font-weight: 600;
+  line-height: 90%;
+  text-align: center;
+}
+
+.header__title {
+  font-size: clamp(3.75rem, 2.5rem + 5.5556vw, 7.5rem);
+  margin-block-end: 40px;
+}
+
+.header__menu {
+  display: flex;
+  justify-content: space-between;
+  text-align: center;
+  border-block-start: 1px solid var(--text-color);
+  border-block-end: 1px solid var(--text-color);
+  padding-block-start: 20px;
+  padding-block-end: 20px;
+}
+
+.header__theme-toggler {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+.header__theme-button {
+  font-family: var(--main-font);
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 104%;
+}
+
+.header__theme-button_is-active {
+  font-weight: 700;
+  position: relative;
+  display: inline-block;
+  pointer-events: none;
+}
+
+.header__theme-button_is-active::after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  inline-size: calc(190% + 8px);
+  inline-size: 4.5em;
+  block-size: 0.5ch;
+  background-color: var(--accent-color);
+  inset-block-end: 0.3ch;
+  inset-inline-start: -4px;
+}
+
+.content-section {
+  padding-inline-start: 5vi;
+  padding-inline-end: 5vi;
+}
+
+.content__title {
+  font-size: 30px;
+  margin-block-start: 7%;
+  margin-block-end: 2.5%;
+}
+
+.content__text-block {
+  font-size: 30px;
+}
+
+.content__paragraph {
+  font-size: 18px;
+  font-family: var(--main-font);
+  font-weight: 400;
+}
+.content__text-block .content__paragraph:not(:last-of-type) {
+  margin-block-end: 1.5em;
+}
+
+.content__blockquote {
+  font-style: italic;
+  font-weight: 400;
+  line-height: 200%;
+  inline-size: 75%;
+  font-size: 18px;
+  font-family: var(--main-font);
+  margin: auto;
+}
+
+.paragraph-top {
+  margin-block-start: 1.5em;
+}
+
+.content__list-item {
+  font-family: var(--main-font);
+  font-size: 18px;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.content__list-item::before {
+  content: "";
+  display: inline-block;
+  inline-size: 15px;
+  block-size: 15px;
+  background-image: url(../images/marker-light.svg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  padding-inline-start: 40px;
+}
+
+.content__list-item:not(:last-child) {
+  margin-block-end: 10px;
+}
+
+.content__text-block_type_first-lettered
+  .content__paragraph:first-of-type::first-letter {
+  display: inline-block;
+  margin-inline-end: 1px;
+  padding: 0 4px;
+  font-weight: 700;
+  font-size: 30px;
+  background-color: var(--accent-color);
+}
+
+.content__figure {
+  position: relative;
+  inline-size: calc(100%+10vi);
+  margin: 7% auto;
+  inset-inline-end: 5vi;
+  inline-size: 100vw;
+}
+
+.content__picture {
+  inline-size: 100%;
+  display: block;
+}
+
+.content__picture-caption {
+  text-align: center;
+  font-family: var(--main-font);
+  font-size: 18px;
+  font-weight: 400;
+  line-height: normal;
+  border-block-end: 1px solid currentColor;
+  padding: 20px;
+}
+
+.content__card {
+  aspect-ratio: 4/3;
+  margin-block-start: 7%;
+  border: 1px solid currentColor;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.content__card-title {
+  font-family: var(--accent-font);
+  font-size: 60px;
+  font-weight: 600;
+  line-height: 90%;
+}
+
+.colored-text {
+  position: relative;
+  display: inline-block;
+}
+
+.colored-text::after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  inline-size: calc(190% + 8px);
+  inline-size: 3.7em;
+  block-size: 0.5ch;
+  background-color: var(--accent-color);
+  inset-block-end: 0.3ch;
+  inset-inline-start: -4px;
+}
+
+.content__card-subtitle {
+  font-family: var(--main-font);
+  font-size: 18px;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.footer {
+  margin-block-start: 10%;
+  padding: 2.5%;
+  border-block-start: 1px solid var(--text-color);
+}
+
+.footer__copyright {
+  text-align: center;
+  font-family: var(--main-font);
+  font-size: 18px;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.header__theme-button:not(.header__theme-button_is-active):hover {
+  border-block-end: 1px solid var(--hover-color);
+}
+
+.content__link:hover {
+  text-decoration: none;
+  border-block-end: 1px solid var(--hover-color);
+}
+
+.header__theme-button:focus-visible,
+.content__link:focus-visible {
+  outline: 1px solid var(--text-color);
+}
